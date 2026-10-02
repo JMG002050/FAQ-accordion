@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --White: hsl(0, 100%, 100%);
+  --Purple-100: hsl(275, 100%, 97%);
+  --Purple-600: hsl(292, 16%, 49%);
+  --Purple-950: hsl(292, 42%, 14%);
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/WorkSans-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--Purple-100);
+  color: var(--Purple-950);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  width: 100%;
+  height: 14.5rem;
+  overflow: hidden;
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* card */
+.faq-card {
+  width: min(90%, 500px);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: var(--White);
+  border-radius: 0.5rem;
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.faq-header img {
+  width: 1.8rem;
+}
+
+.faq-header h1 {
+  font-size: clamp(2.5rem, 3.5vw, 3rem);
+}
+
+/* questions wrapper */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--Purple-100);
+}
+
+.faq-item:first-child {
+  padding-top: 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.faq-question {
+  font-size: clamp(0.8rem, 3.4vw, 1.15rem);
+}
+
+.faq-toggle {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+
+  border: none;
+  background: none;
+
+  color: var(--Purple-950);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.faq-toggle img {
+  flex-shrink: 0;
+  width: 1.8rem;
+}
+
+/* answers */
+.faq-answer {
+  display: none;
+
+  margin-top: 1.5rem;
+
+  color: var(--Purple-600);
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 3vw, 1.05rem);
+  line-height: 1.5;
+}
+
+/* Added/removed with JavaScript */
+.faq-answer.showText {
+  display: block;
+}
